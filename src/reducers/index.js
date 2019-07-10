@@ -13,13 +13,19 @@ export default (state = initialState, action) => {
   switch (action.type) {
     case INCREMENT:
     // Fill in the body of this case
-    const newCount = parseInt(action.payload) + 1
-       return {
+      const addCount = parseInt(action.payload) + 1;
+      return {
         ...state,
-        count: newCount,
+        count: addCount,
       }
     case DECREMENT:
     // Fill in the body of this case
+      const minusCount = parseInt(action.payload) - 1;
+      return {
+        ...state,
+        count: minusCount,
+      }
+
     default:
       return state;
   }
