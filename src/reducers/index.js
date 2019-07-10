@@ -13,6 +13,11 @@ export default (state = initialState, action) => {
   switch (action.type) {
     case INCREMENT:
     // Fill in the body of this case
+    const newCount = parseInt(action.payload) + 1
+       return {
+        ...state,
+        count: newCount,
+      }
     case DECREMENT:
     // Fill in the body of this case
     default:
