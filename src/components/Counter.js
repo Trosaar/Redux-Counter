@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
-import { increment, decrement, incrementOdd, INCREMENT_IF_ODD, INCREMENT_ASYNC } from '../actions';
+import { increment, decrement, incrementOdd, incrementAsy } from '../actions';
 
 class Counter extends Component {
     incrementIfOdd = (e) => {
@@ -12,9 +12,11 @@ class Counter extends Component {
         }
       }
 
-    incrementAsync = (count) => {
+    incrementAsync = (e) => {
         // Stretch Problem: Implement an increment function that
         // increments after waiting for one second
+        e.preventDefault();
+        setTimeout(this.props.incrementAsy, 1000, this.props.count)
     };
 
     render() {
@@ -60,4 +62,4 @@ const mapStateToProps = (state) => {
 // is only a dumb React component. We pass in all of the functions that
 // are reliant on Redux, along with the component itself, so that Redux
 // makes itself known to this component.
-export default connect(mapStateToProps, { increment, decrement, incrementOdd })(Counter);
+export default connect(mapStateToProps, { increment, decrement, incrementOdd, incrementAsy})(Counter);

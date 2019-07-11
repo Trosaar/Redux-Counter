@@ -35,7 +35,7 @@ export const incrementOdd = (count) => {
   }
 };
 
-export const incrementAsync = (count) => {
+export const incrementAsy = (count) => {
   // Fill in this function
   return {
     type: INCREMENT_ASYNC,

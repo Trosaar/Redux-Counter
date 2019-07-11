@@ -31,7 +31,12 @@ export default (state = initialState, action) => {
         ...state,
         count: addOdd,
       }
-
+    case INCREMENT_ASYNC:
+      const asyncAdd = parseInt(action.payload) + 1;
+      return {
+        ...state,
+        count: asyncAdd,
+      }
     default:
       return state;
   }
