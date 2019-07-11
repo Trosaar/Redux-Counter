@@ -16,7 +16,7 @@ class Counter extends Component {
         // Stretch Problem: Implement an increment function that
         // increments after waiting for one second
         e.preventDefault();
-        setTimeout(this.props.incrementAsy, 1000, this.props.count)
+        setTimeout(() => {this.props.incrementAsy(this.props.count)}, 1000, )
     };
 
     render() {
