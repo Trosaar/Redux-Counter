@@ -1,4 +1,4 @@
-import { INCREMENT, DECREMENT } from '../actions';
+import { INCREMENT, DECREMENT, INCREMENT_IF_ODD, INCREMENT_ASYNC } from '../actions';
 
 const initialState = {
   count: 0
@@ -24,6 +24,12 @@ export default (state = initialState, action) => {
       return {
         ...state,
         count: minusCount,
+      }
+    case INCREMENT_IF_ODD:
+      const addOdd = parseInt(action.payload) + 1;
+      return {
+        ...state,
+        count: addOdd,
       }
 
     default:
